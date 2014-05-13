@@ -6,7 +6,7 @@ highlighter:	pygments
 permalink:	/blog/:title
 
 # Setup
-title:		SHANFI
+title:		'S.HANFI'
 tagline:	'blog'
 description:	'My personal blog.'
 url:		http://hanfi.github.io/
