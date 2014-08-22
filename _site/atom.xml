@@ -4,7 +4,7 @@
  <title>S.HANFI</title>
  <link href="http://hanfi.github.io//atom.xml" rel="self"/>
  <link href="http://hanfi.github.io//"/>
- <updated>2014-08-22T17:38:14+02:00</updated>
+ <updated>2014-08-22T17:43:13+02:00</updated>
  <id>http://hanfi.github.io/</id>
  <author>
    <name>Souhail Hanfi</name>
@@ -98,6 +98,8 @@
 &lt;p&gt;And dont forget to add this to your &lt;strong&gt;_config.yml&lt;/strong&gt; :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;yes&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And that&amp;#39;s it ... &lt;strong&gt;Now share and Comment&lt;/strong&gt;&lt;/p&gt;
 </content>
  </entry>
  

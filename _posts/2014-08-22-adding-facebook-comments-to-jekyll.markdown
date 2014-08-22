@@ -98,3 +98,5 @@ And dont forget to add this to your **_config.yml** :
 {% highlight YAML %}
 share: yes
 {% endhighlight %}
+
+And that's it ... **Now share and Comment**
