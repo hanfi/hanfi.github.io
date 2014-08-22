@@ -20,7 +20,7 @@ header, footer {
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
-	/*background-size: cover;*/
+	background-size: cover;
 	background-attachment: scroll;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -290,7 +290,7 @@ pre code {
 
 .clean {
 	color: #eee;
-	background-color: #888;
+	background-color: #000;
 }
 
 .clean a {
