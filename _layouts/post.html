@@ -58,13 +58,13 @@ article: true
 	{{ content }}
 
 	{% if site.comments and page.comments != false %}
-		<div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" data-numposts="5" data-colorscheme="light" width="700px" style="padding-top:50px;"></div>
+		<div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" data-numposts="5" data-colorscheme="light" width="100%" style="padding-top:50px;"></div>
 	{% endif %}
 </div>
 
 {% for post in site.related_posts limit:1 %}
-<footer class="{% if post.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{ site.cover }}{% endif %}) ; background-position: bottom ; min-height: 200px;">
-	<div id="nav-icon" style="top: 25px;">
+<footer class="{% if post.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{ site.cover }}{% endif %}) ; background-position: center ; min-height: 200px;">
+	<div id="nav-icon" style="z-index: 9999;">
 		<a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-collapse"></span></a>
 	</div>
 	<div id="post-info">
