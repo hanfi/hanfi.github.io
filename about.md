@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About the site, the author, the life, the universe and everything more.
+image: /assets/images/about.png
 ---
 
 <div class="message">
