@@ -19,15 +19,6 @@
 </head>
 
 <body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=1453089668288092&version=v2.0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 	<header class="clean" style="height: 350px; background: url(/assets/images/cover.jpg); background-position: center; background-attachment: fixed;">
 	<label class="menu" for="_1">
 	<span class="genericon genericon-menu"></span>
@@ -58,19 +49,43 @@
 		</a>
 	</div>
 </header>
+
 <div id="post-list">
+
+	
+	<!-- Begin include facebook JS SDK -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=1453089668288092&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<!-- End include facebook JS SDK -->
+	<div class="social_share">
+		<span>
+			<div class="fb-like" data-href="http://hanfi.github.io//index.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="padding-bottom:30px"></div>
+		</span>
+		<span>
+			<script src="https://apis.google.com/js/platform.js" async defer>
+				{lang: 'fr'}
+			</script>
+			<div class="g-plusone" data-size="medium"></div>
+		</span>
+		<span>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="VenOmaX666">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</span>
+	</div>
+	
+
 	
 		<div>
 			<span class="post-date">22 August 2014</span>
-			<h1><a href="/blog/adding-facebook-comments-to-jekyll">Facebook integration with Jekyll</a></h1>
-			<p class="post-description">The problem with jekyll, everybody will tell you, it&#39;s the comments.
-
-The biggest advantage of the blogging framework is that it has no need for a Data base, but in the case it becomes it&#39;s weakness.
-
-No Data Base = No Dynamic Data = No Comments
-
-Some
-</p>
+			<h1><a href="/blog/adding-facebook-comments-to-jekyll">Social integration in Jekyll</a></h1>
+			<p class="post-description">The problem with jekyll, everybody will tell you, it&#39;s the comments. The biggest advantage of the blogging framework is that it has no need for a Data base, but in the case it becomes it&#39;s weakness. No Data Base = No Dynamic Data = No Comments But discuss, facebook and...</p>
 		</div>
 		<br>
 	

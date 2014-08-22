@@ -15,7 +15,11 @@ author:
   url:		https://twitter.com/VenOmaX666
 
 paginate:	5
+
+#comments
 comments: yes
+
+#share
 share: yes
 
 # Custom vars
