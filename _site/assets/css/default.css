@@ -487,3 +487,11 @@ pre code {
 	font-size: 12pt;
 	color: #999;
 }
+
+.social_share {
+	font-size: 1px;
+}
+
+.social_share span:first-child {
+	margin-right:15px;
+}

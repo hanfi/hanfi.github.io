@@ -10,13 +10,13 @@ title:		'S.HANFI'
 tagline:	'blog'
 description:	'My personal blog.'
 url:		http://hanfi.github.io/
-comments: yes
-
 author:
   name:		'Souhail Hanfi'
   url:		https://twitter.com/VenOmaX666
 
 paginate:	5
+comments: yes
+share: yes
 
 # Custom vars
 icon:		/assets/images/icon.png
