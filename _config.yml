@@ -10,6 +10,7 @@ title:		'S.HANFI'
 tagline:	'blog'
 description:	'My personal blog.'
 url:		http://hanfi.github.io/
+comments: yes
 
 author:
   name:		'Souhail Hanfi'

@@ -4,21 +4,13 @@
  <title>S.HANFI</title>
  <link href="http://hanfi.github.io//atom.xml" rel="self"/>
  <link href="http://hanfi.github.io//"/>
- <updated>2014-05-14T16:05:52+02:00</updated>
+ <updated>2014-08-22T14:35:25+02:00</updated>
  <id>http://hanfi.github.io/</id>
  <author>
    <name>Souhail Hanfi</name>
    <email></email>
  </author>
 
- 
- <entry>
-   <title>hello world</title>
-   <link href="http://hanfi.github.io//blog/hello-world"/>
-   <updated>2014-05-13T00:00:00+02:00</updated>
-   <id>http://hanfi.github.io//blog/hello-world</id>
-   <content type="html"></content>
- </entry>
  
 
 </feed>

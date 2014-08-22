@@ -19,7 +19,16 @@
 </head>
 
 <body>
-	<header class="clean" style="height: 350px; background: url(/assets/images/cover.jpg) center center fixed;">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=1453089668288092&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<header class="clean" style="height: 350px; background: url(/assets/images/cover.jpg); background-position: center; background-attachment: fixed;">
 	<label class="menu" for="_1">
 	<span class="genericon genericon-menu"></span>
 </label>
@@ -51,17 +60,10 @@
 </header>
 <div id="post-list">
 	
-		<div>
-			<span class="post-date">13 May 2014</span>
-			<h1><a href="/blog/hello-world">hello world</a></h1>
-			<p class="post-description"></p>
-		</div>
-		<br>
-	
 </div>
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 1</span>
+	<span class="page-number">Page  of </span>
 	
 </nav>
 <footer class="clean" style="background-image: url(/assets/images/cover.jpg); background-position: bottom; height: 60px;">
