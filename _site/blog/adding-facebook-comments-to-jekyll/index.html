@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="canonical" href="http://hanfi.github.io//blog/adding-facebook-comments-to-jekyll" />
+	<meta name="description" content="The problem with jekyll, everybody will tell you, it's the comments. The biggest advantage of the blogging framework is that..." />
+	<meta property="og:description" content="The problem with jekyll, everybody will tell you, it's the comments. The biggest advantage of the blogging framework is that..." />
+	<meta itemprop="image" content="http://hanfi.github.io//assets/images/facebook_comments.jpg" />
+	<meta property="og:image" content="http://hanfi.github.io//assets/images/facebook_comments.jpg" />
+	<meta property="og:title" content="Social integration in Jekyll" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://hanfi.github.io//blog/adding-facebook-comments-to-jekyll" />
+	<meta property="og:site_name" content="S.HANFI" />
+	<title>Social integration in Jekyll &middot; S.HANFI</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" media="only screen and (min-width: 1001px)" href="/assets/css/desktop.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 1000px)" href="/assets/css/mobile.css" />
+	<link href="/assets/css/genericons.css" type="text/css" rel="stylesheet" />
+	<link href="/assets/css/syntax.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+	<link rel="apple-touch-icon" href="http://hanfi.github.io//assets/images/icon.png">
+	<link rel="shortcut icon" href="http://hanfi.github.io//assets/images/favicon.gif" type="image/gif">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://hanfi.github.io//atom.xml">
+</head>
+
+<body>
+	<header class="clean" style="background-image: url(/assets/images/facebook_comments.jpg);height: 100%;">
+	
+	<label class="menu" for="_1">
+	<span class="genericon genericon-menu"></span>
+</label>
+<input id="_1" type="checkbox">
+<div class="menu-content">
+	<div class="menu" style="background-color: #777; z-index: -1;"></div>
+	
+	<a href="/">Home</a><br>
+	
+	<a href="/about">About</a><br>
+	
+</div>
+<div class="social-links">
+	
+	<a href="https://twitter.com/VenOmaX666" target="_blank" title="Follow me on twitter"><span class="genericon genericon-twitter"></span></a>
+	
+	<a href="https://github.com/hanfi" target="_blank" title="Fork me on github"><span class="genericon genericon-github"></span></a>
+	
+	<a href="https://plus.google.com/+SouhailHanfi" target="_blank" title="Add me on google+"><span class="genericon genericon-googleplus-alt"></span></a>
+	
+	<a href="http://hanfi.github.io/atom.xml" target="_blank" title="Subscribe to my feed"><span class="genericon genericon-feed"></span></a>
+	
+</div>
+	<div id="post-info">
+		<h1>Social integration in Jekyll</h1>
+		
+		<a class="site-title" href="http://hanfi.github.io/"><img src="/assets/images/icon.png" class="site-icon-small">S.HANFI</a>, in 22 August 2014
+	</div>
+	<div id="nav-icon" style="bottom: 60px;">
+		<a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-expand"></span></a>
+	</div>
+</header>
+<div id="article">
+
+	<!-- Begin include facebook JS SDK -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=1453089668288092&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<!-- End include facebook JS SDK -->
+
+	
+	<div class="social_share">
+		<span>
+			<div class="fb-like" data-href="http://hanfi.github.io//blog/adding-facebook-comments-to-jekyll" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="padding-bottom:30px"></div>
+		</span>
+		<span>
+			<script src="https://apis.google.com/js/platform.js" async defer>
+				{lang: 'fr'}
+			</script>
+			<div class="g-plusone" data-size="medium"></div>
+		</span>
+		<span>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="VenOmaX666">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</span>
+	</div>
+	
+
+	<p>The problem with jekyll, everybody will tell you, it&#39;s the comments.</p>
+
+<p>The biggest advantage of the blogging framework is that it has no need for a Data base, but in the case it becomes it&#39;s weakness.</p>
+
+<p><strong>No Data Base = No Dynamic Data = No Comments</strong></p>
+
+<p>But discuss, facebook and some others provide a commenting sytem that you can integrate to your blog.</p>
+
+<p>Beeing a facebook user, for my blog i choosed the facebook comments integration, and this is how i made it work.</p>
+
+<p>The integration is realy simple :</p>
+
+<p>start by <a href="https://developers.facebook.com/docs/plugins/comments" target="_blank">https://developers.facebook.com/docs/plugins/comments</a></p>
+
+<ul>
+<li><p>create an App</p></li>
+<li><p>copy and paste the generated code like in the example bleow</p>
+
+<ul>
+<li>the <strong>SDK</strong> inclusion script</li>
+<li>the <strong>.fb-comments DIV</strong> between an <strong>&quot;if statement&quot;</strong> so it becomes simple to disable the comments when needed (globally or in a choosen page)</li>
+</ul></li>
+</ul>
+
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Begin include facebook JS SDK --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;fb-root&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">s</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">js</span><span class="p">,</span> <span class="nx">fjs</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+    <span class="nx">js</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span> <span class="nx">js</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="nx">js</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">&quot;//connect.facebook.net/fr_FR/sdk.js#xfbml=1&amp;appId=YourAppID&amp;version=v2.0&quot;</span><span class="p">;</span>
+    <span class="nx">fjs</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">js</span><span class="p">,</span> <span class="nx">fjs</span><span class="p">);</span>
+  <span class="p">}(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;facebook-jssdk&#39;</span><span class="p">));</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="c">&lt;!-- End include facebook JS SDK --&gt;</span>
+
+<span class="c">&lt;!-- Begin Comments DIV --&gt;</span>
+{% if site.comments and if page.comments != false%}
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fb-comments&quot;</span> <span class="na">data-href=</span><span class="s">&quot; {{ site.url } {{page.url }}&quot;</span> <span class="na">data-numposts=</span><span class="s">&quot;5&quot;</span> <span class="na">data-colorscheme=</span><span class="s">&quot;light&quot;</span> <span class="na">width=</span><span class="s">&quot;700px&quot;</span> <span class="na">style=</span><span class="s">&quot;padding-top:50px;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+{% endif %}
+<span class="c">&lt;!-- End Comments DIV --&gt;</span></code></pre></div>
+
+<p>Add a line in your <strong>_config.yml</strong>:</p>
+
+<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">comments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span></code></pre></div>
+
+<p>And Now your are ready to get comments on your articles</p>
+
+<hr>
+
+<p>Now we are going to add some sharing buttons (facebook, google+, Twitter)</p>
+
+<p>Here are the URLs to get the code to include:</p>
+
+<ul>
+<li><p><a href="https://about.twitter.com/fr/resources/buttons" target="_blank">https://about.twitter.com/fr/resources/buttons</a> for twitter button</p></li>
+<li><p><a href="https://developers.facebook.com/docs/plugins/like-button" target="_blank">https://developers.facebook.com/docs/plugins/like-button</a> for facebook like/share button</p></li>
+<li><p><a href="https://developers.google.com/+/web/share/" target="_blank">https://developers.google.com/+/web/share/</a> for the google plus button</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="html">{% if site.share or page.share != false %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;social_share&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fb-like&quot;</span> <span class="na">data-href=</span><span class="s">&quot; {{ site.url } {{page.url }}&quot;</span> <span class="na">data-layout=</span><span class="s">&quot;button_count&quot;</span> <span class="na">data-action=</span><span class="s">&quot;like&quot;</span> <span class="na">data-show-faces=</span><span class="s">&quot;false&quot;</span> <span class="na">data-share=</span><span class="s">&quot;true&quot;</span> <span class="na">style=</span><span class="s">&quot;padding-bottom:30px&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://apis.google.com/js/platform.js&quot;</span> <span class="na">async</span> <span class="na">defer</span><span class="nt">&gt;</span>
+      <span class="p">{</span><span class="nx">lang</span><span class="o">:</span> <span class="s1">&#39;fr&#39;</span><span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;g-plusone&quot;</span> <span class="na">data-size=</span><span class="s">&quot;medium&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://twitter.com/share&quot;</span> <span class="na">class=</span><span class="s">&quot;twitter-share-button&quot;</span><span class="nt">&gt;</span>Tweet<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;script&gt;</span><span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">id</span><span class="p">){</span><span class="kd">var</span> <span class="nx">js</span><span class="p">,</span><span class="nx">fjs</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="nx">p</span><span class="o">=</span><span class="sr">/^http:/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span><span class="o">?</span><span class="s1">&#39;http&#39;</span><span class="o">:</span><span class="s1">&#39;https&#39;</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">)){</span><span class="nx">js</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span><span class="nx">js</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="nx">id</span><span class="p">;</span><span class="nx">js</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="nx">p</span><span class="o">+</span><span class="s1">&#39;://platform.twitter.com/widgets.js&#39;</span><span class="p">;</span><span class="nx">fjs</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">js</span><span class="p">,</span><span class="nx">fjs</span><span class="p">);}}(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;twitter-wjs&#39;</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+{% endif %}</code></pre></div>
+
+<p>And dont forget to add this to your <strong>_config.yml</strong> :</p>
+
+<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">share</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span></code></pre></div>
+
+
+	
+		<div class="fb-comments" data-href="http://hanfi.github.io//blog/adding-facebook-comments-to-jekyll" data-numposts="5" data-colorscheme="light" width="700px" style="padding-top:50px;"></div>
+	
+</div>
+
+
+<script src="/assets/js/smooth-scroll.js"></script>
+
+</body>
+</html>
