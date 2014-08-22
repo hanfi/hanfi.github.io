@@ -2,7 +2,7 @@
 layout: post
 title: "Blogging made easy with github.io and jekyll"
 date: "2014-08-22"
-image: /assets/images/github.png
+image: /assets/images/github.jpg
 ---
 In this article i will briefly explain how to crate a YourUserName.github.io page and use jekyll to blog.
 

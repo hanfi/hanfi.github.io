@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>S.HANFI</title>
+ <title>Souhail HANFI</title>
  <link href="http://hanfi.github.io//atom.xml" rel="self"/>
  <link href="http://hanfi.github.io//"/>
- <updated>2014-08-22T18:42:11+02:00</updated>
+ <updated>2014-08-22T18:52:50+02:00</updated>
  <id>http://hanfi.github.io/</id>
  <author>
    <name>Souhail Hanfi</name>
