@@ -65,6 +65,7 @@
 <div id="article">
 
 	<!-- Begin include facebook JS SDK -->
+	
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
@@ -74,25 +75,32 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
+	
 	<!-- End include facebook JS SDK -->
 
+
+	<!-- Begin include socialShare buttons-->
 	
-	<div class="social_share">
-		<span>
-			<div class="fb-like" data-href="http://hanfi.github.io//blog/social-integration-in-jekyll" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="padding-bottom:30px"></div>
-		</span>
-		<span>
-			<script src="https://apis.google.com/js/platform.js" async defer>
-				{lang: 'fr'}
-			</script>
-			<div class="g-plusone" data-size="medium"></div>
-		</span>
-		<span>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="VenOmaX666">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</span>
-	</div>
+		<div class="social_share">
+  <span>
+    <div class="fb-like" data-href="http://hanfi.github.io//blog/social-integration-in-jekyll" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="padding-bottom:30px"></div>
+  </span>
+  <span>
+    <script src="https://apis.google.com/js/platform.js" async defer>
+      {lang: 'fr'}
+    </script>
+    <div class="g-plusone" data-size="medium"></div>
+  </span>
+  <span>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="VenOmaX666">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </span>
+</div>
+
 	
+	<!-- End include socialShare buttons-->
+
+
 
 	<p>The problem with jekyll, everybody will tell you, it&#39;s the comments.</p>
 
@@ -131,7 +139,7 @@
 <span class="c">&lt;!-- End include facebook JS SDK --&gt;</span>
 
 <span class="c">&lt;!-- Begin Comments DIV --&gt;</span>
-{% if site.comments and if page.comments != false%}
+{% if site.comments and if page.comments != false %}
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fb-comments&quot;</span> <span class="na">data-href=</span><span class="s">&quot; {{ site.url } {{page.url }}&quot;</span> <span class="na">data-numposts=</span><span class="s">&quot;5&quot;</span> <span class="na">data-colorscheme=</span><span class="s">&quot;light&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 {% endif %}
 <span class="c">&lt;!-- End Comments DIV --&gt;</span></code></pre></div>
@@ -141,6 +149,27 @@
 <div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">comments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span></code></pre></div>
 
 <p>And Now your are ready to get comments on your articles</p>
+
+<hr>
+
+<p>We can also use Google plus comments but this is not a feature released from Google as a service to use it&#39;s just some code lines stolen from blogger service that embed a comments widget that you can use in your page.</p>
+
+<p>Google can at any time change it&#39;s code since it&#39;s not an official release.</p>
+
+<p>Here&#39;s the code that you need:</p>
+
+<div class="highlight"><pre><code class="html">{% if site.comments and if page.comments != false %}
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://apis.google.com/js/plusone.js&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;g-comments&quot;</span>
+    <span class="na">data-href=</span><span class="s">&quot;http://hanfi.github.io//blog/social-integration-in-jekyll&quot;</span>
+    <span class="na">data-width=</span><span class="s">&quot;642&quot;</span>
+    <span class="na">data-first_party_property=</span><span class="s">&quot;BLOGGER&quot;</span>
+    <span class="na">data-view_type=</span><span class="s">&quot;FILTERED_POSTMOD&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+{% endif %}</code></pre></div>
+
+<p>the width being hard coded i hate those widgets that are not responsive.</p>
 
 <hr>
 
@@ -180,7 +209,22 @@
 
 
 	
-		<div class="fb-comments" data-href="http://hanfi.github.io//blog/social-integration-in-jekyll" data-numposts="5" data-colorscheme="light" width="100%" style="padding-top:50px;"></div>
+		<!-- Begin github Comments -->
+		
+			<script src="https://apis.google.com/js/plusone.js">
+</script>
+<div class="g-comments"
+    data-href="http://hanfi.github.io//blog/social-integration-in-jekyll"
+        data-width="642"
+    data-first_party_property="BLOGGER"
+    data-view_type="FILTERED_POSTMOD">
+</div>
+
+		<!-- End google plus Comments -->
+
+		<!--Begin facebook comments -->
+		
+		<!-- End facebook comments -->
 	
 </div>
 

@@ -26,6 +26,7 @@ article: true
 <div id="article">
 
 	<!-- Begin include facebook JS SDK -->
+	{% if site.share or site.comments == "facebook" %}
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
@@ -35,30 +36,36 @@ article: true
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
+	{% endif %}
 	<!-- End include facebook JS SDK -->
 
+
+	<!-- Begin include socialShare buttons-->
 	{% if site.share and page.share != false %}
-	<div class="social_share">
-		<span>
-			<div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="padding-bottom:30px"></div>
-		</span>
-		<span>
-			<script src="https://apis.google.com/js/platform.js" async defer>
-				{lang: 'fr'}
-			</script>
-			<div class="g-plusone" data-size="medium"></div>
-		</span>
-		<span>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="VenOmaX666">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</span>
-	</div>
+		{% include socialShare.html %}
 	{% endif %}
+	<!-- End include socialShare buttons-->
+
+
 
 	{{ content }}
 
 	{% if site.comments and page.comments != false %}
-		<div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" data-numposts="5" data-colorscheme="light" width="100%" style="padding-top:50px;"></div>
+		<!-- Begin github Comments -->
+		{% if site.comments == "github" %}
+			{% include githubComments.html %}
+		<!-- End github Comments -->
+
+		<!-- Begin google plus Comments -->
+		{% elsif site.comments == "google" %}
+			{% include googleComments.html %}
+		<!-- End google plus Comments -->
+
+		<!--Begin facebook comments -->
+		{% elsif site.comments == "facebook" %}
+			{% include facebookComments.html %}
+		{% endif %}
+		<!-- End facebook comments -->
 	{% endif %}
 </div>
 

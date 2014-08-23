@@ -4,7 +4,7 @@
  <title>Souhail HANFI</title>
  <link href="http://hanfi.github.io//atom.xml" rel="self"/>
  <link href="http://hanfi.github.io//"/>
- <updated>2014-08-22T20:26:05+02:00</updated>
+ <updated>2014-08-23T10:23:59+02:00</updated>
  <id>http://hanfi.github.io/</id>
  <author>
    <name>Souhail Hanfi</name>
@@ -54,7 +54,7 @@
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- End include facebook JS SDK --&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Begin Comments DIV --&amp;gt;&lt;/span&gt;
-{% if site.comments and if page.comments != false%}
+{% if site.comments and if page.comments != false %}
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fb-comments&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot; {{ site.url } {{page.url }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-numposts=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;5&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-colorscheme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;light&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 {% endif %}
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- End Comments DIV --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -64,6 +64,27 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;yes&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And Now your are ready to get comments on your articles&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;We can also use Google plus comments but this is not a feature released from Google as a service to use it&amp;#39;s just some code lines stolen from blogger service that embed a comments widget that you can use in your page.&lt;/p&gt;
+
+&lt;p&gt;Google can at any time change it&amp;#39;s code since it&amp;#39;s not an official release.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s the code that you need:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;{% if site.comments and if page.comments != false %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://apis.google.com/js/plusone.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;g-comments&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;data-href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://hanfi.github.io//blog/social-integration-in-jekyll&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;data-width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;642&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;data-first_party_property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;BLOGGER&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;data-view_type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;FILTERED_POSTMOD&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+{% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;the width being hard coded i hate those widgets that are not responsive.&lt;/p&gt;
 
 &lt;hr&gt;
 

@@ -496,3 +496,94 @@ pre code {
 .social_share span:first-child {
 	margin-right:15px;
 }
+
+#GithubComments ul{
+	list-style:none;
+	padding-left:0;
+}
+
+#GithubComments ul li{
+	width:100%;
+	display: inline-block;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+#GithubComments .comment_avatar{
+	height:48px;
+	width:48px;
+	border-radius:4px;
+	display: inline-block;
+	vertical-align:top;
+}
+
+#GithubComments .comment_text_container{
+	display: inline-block;
+	border-color: #bfccd1;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin-left: 20px;
+}
+#GithubComments .comment_text_container:before{
+	content:"";
+	position:absolute;
+	left:56px;
+	margin-top:15px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 9px 13.9px 9px 0;
+	border-color: transparent #bfccd1 transparent transparent;
+	border-style: solid solid outset;
+	line-height: 0px;
+	_border-color: #000000 #bfccd1 #000000 #000000;
+	_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+#GithubComments .comment_text_container:after{
+	content:"";
+	position:absolute;
+	left:56px;
+	margin-top:-60px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 13.9px 8px 0;
+	border-color: transparent #f2f8fa transparent transparent;
+	border-style: solid solid outset;
+	line-height: 0px;
+	_border-color: #000000 #f2f8fa #000000 #000000;
+	_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+
+#GithubComments .comment_text_header{
+	font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+	color: #8e9597;
+	background-color: #f2f8fa;
+	border-bottom-color: #e1edf1;
+	padding:10px;
+}
+
+#GithubComments .comment_text_header a{
+	font-weight: bold;
+	color: #555;
+  text-decoration: none;
+
+}
+
+#GithubComments .comment_text_body{
+	padding:10px;
+	box-sizing: border-box;
+	color: #333333
+	display: block;
+	font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+/* google plus comments responsive */
+div[id^='___comments_'], div[id^='___comments_'] iframe {
+  width: 100% !important;
+}

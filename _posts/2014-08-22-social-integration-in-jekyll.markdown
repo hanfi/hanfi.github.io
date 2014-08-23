@@ -43,7 +43,7 @@ start by <a href="https://developers.facebook.com/docs/plugins/comments" target=
 <!-- End include facebook JS SDK -->
 
 <!-- Begin Comments DIV -->
-{{ "{% if site.comments and if page.comments != false" }}%}
+{{ "{% if site.comments and if page.comments != false" }} %}
   <div class="fb-comments" data-href="{{ " {{ site.url " }}}{{ " {{page.url " }}}}" data-numposts="5" data-colorscheme="light"></div>
 {{ "{% endif " }}%}
 <!-- End Comments DIV -->
@@ -59,6 +59,29 @@ comments: yes
 
 And Now your are ready to get comments on your articles
 
+----------
+
+We can also use Google plus comments but this is not a feature released from Google as a service to use it's just some code lines stolen from blogger service that embed a comments widget that you can use in your page.
+
+Google can at any time change it's code since it's not an official release.
+
+Here's the code that you need:
+
+{% highlight HTML %}
+{{ "{% if site.comments and if page.comments != false" }} %}
+<script src="https://apis.google.com/js/plusone.js">
+</script>
+<div class="g-comments"
+    data-href="{{ site.url }}{{ page.url }}"
+    data-width="642"
+    data-first_party_property="BLOGGER"
+    data-view_type="FILTERED_POSTMOD">
+</div>
+{{ "{% endif " }}%}
+
+{% endhighlight %}
+
+the width being hard coded i hate those widgets that are not responsive.
 
 ----------
 
