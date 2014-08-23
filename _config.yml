@@ -22,6 +22,9 @@ comments: facebook
 #share
 share: yes
 
+#analytics
+googleAnalyticsID: UA-54114715-1
+
 # Custom vars
 icon:		/assets/images/icon.png
 cover:		/assets/images/cover.jpg
