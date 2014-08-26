@@ -1,0 +1,131 @@
+---
+layout: post
+title: "simple Boto examples with S3"
+date: "2014-08-26"
+---
+Requirements
+------------
+all you need is python, boto and filechunkio for easy multipart-upload
+
+Creating connection
+-------------------
+{% highlight python %}
+import boto
+import boto.s3.connection
+access_key = 'put your acces key here'
+secret_key = 'put your secret key here'
+con = boto.connect_s3(access_key,secret_key)
+{% endhighlight %}
+
+you can create ~/.boto file and add your credentials on it :
+
+{% highlight ini %}
+[Credentials]
+aws_access_key_id = put_your_acces_key-here
+aws_secret_access_key = put_your_secret_key_here
+{% endhighlight %}
+
+so now you can create a connection object just by
+
+{% highlight python %}
+con = boto.connect_s3()
+{% endhighlight %}
+
+Listing buckets
+---------------
+{% highlight python %}
+for bucket in con.get_all_buckets():
+  print bucket.name
+{% endhighlight %}
+
+Creating bucket
+---------------
+{% highlight python %}
+bucket = con.create_bucket('new_bucket')
+{% endhighlight %}
+
+Listing all objects in a bucket
+-------------------------------
+{% highlight python %}
+for key in bucket.list()
+  print key.name
+{% endhighlight %}
+
+Deleting Bucket
+---------------
+bucket must be empty before deleting (no force method implemented in boto)
+{% highlight python %}
+bucket.delete()
+{% endhighlight %}
+
+Creating an object from String
+------------------------------
+{% highlight python %}
+key = bucket.new_key("test.txt")
+key.set_content_from_string("hello world")
+{% endhighlight %}
+
+Creating an object from File (alternative key usage)
+---------------------------------------------------
+{% highlight python %}
+from boto.s3.key import Key
+key = Key(bucket)
+key.key = "file"
+key.set_contents_from_filename("path_to_file")
+{% endhighlight %}
+
+Retrieving object as String
+---------------------------
+{% highlight python %}
+key.get_contents_to_string()
+{% endhighlight %}
+
+Retrieving object in File
+-------------------------
+{% highlight python %}
+key.get_contents_to_filename()
+{% endhighlight %}
+
+S3 Multipart-Upload for big files (with retries)
+---------------------------------
+{% highlight python %}
+import math, os
+from filechunkio import FileChunkIO
+chunk_size = 5*1024*1024 #5mo
+file_name = "my_big_file"
+file_size = os.stat(file_name).st_size
+chunk_number = int (math.ceil(file_size/chunk_size))+1
+mp = bucket.initiate_multipart_upload(os.path.basename(file_name))
+numberOfRetries = 10
+for i in range(chunk_number):
+    offset = chunk_size*i
+    bytes = min(chunk_size, file_size - offset)
+    with FileChunkIO(file_name, "r", offset=offset, bytes=bytes) as fp :
+        try:
+            mp.upload_part_from_file(fp, part_num=i+1)
+        except Exception, ex:
+            if numberOfRetries <= 0:
+                raise ex
+            else:
+                numberOfRetries -= 1
+                mp.upload_part_from_file(fp, part_num=i+1)
+mp.complete_upload()
+{% endhighlight %}
+
+Delete an object
+----------------
+{% highlight python %}
+bucket.delete_key('file_to_delete')
+{% endhighlight%}
+
+Change object ACL
+-----------------
+{% highlight python %}
+key.set_canned_acl('public-read')
+{% endhighlight %}
+
+Generate signed url valid for 30 seconds
+---------------------------------------
+{% highlight python%}
+signed_url = key.generate_url(30)
+{% endhighlight %}
