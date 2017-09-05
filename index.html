@@ -26,21 +26,7 @@ title: Home
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<!-- End include facebook JS SDK -->
-	<div class="social_share">
-		<span>
-			<div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="padding-bottom:30px"></div>
-		</span>
-		<span>
-			<script src="https://apis.google.com/js/platform.js" async defer>
-				{lang: 'fr'}
-			</script>
-			<div class="g-plusone" data-size="medium"></div>
-		</span>
-		<span>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="VenOmaX666">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</span>
-	</div>
+	{% include socialShare.html %}
 	{% endif %}
 
 	{% for post in paginator.posts %}

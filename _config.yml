@@ -1,15 +1,15 @@
 # Dependencies
-markdown:	redcarpet
-highlighter:	pygments
+markdown:	kramdown
+highlighter:	rouge
 
 # Permalinks
-permalink:	/blog/:title
+permalink:	/blog/:title.html
 
 # Setup
 title:		'Souhail HANFI'
 tagline:	'blog'
 description:	'My personal blog.'
-url:		http://hanfi.github.io/
+url:		https://hanfi.bitbucket.io/
 author:
   name:		'Souhail Hanfi'
   url:		https://twitter.com/VenOmaX666
@@ -23,24 +23,32 @@ comments: google
 share: yes
 
 #analytics
-googleAnalyticsID: UA-54114715-1
+googleAnalyticsID: UA-105982304-1
 
 # Custom vars
 icon:		/assets/images/icon.png
 cover:		/assets/images/cover.jpg
 
 social:
-  - icon:	twitter
-    url:	https://twitter.com/VenOmaX666
-    desc:	Follow me on twitter
+  - icon:	linkedin
+    url:	https://www.linkedin.com/in/souhail-hanfi
+    desc:	Find me on LinkedIn
 
   - icon:	github
     url:	https://github.com/hanfi
     desc:	Fork me on github
 
-  - icon:	googleplus-alt
-    url:	https://plus.google.com/+SouhailHanfi?rel=author
-    desc:	Add me on google+
+  - icon:	twitter
+    url:	https://twitter.com/VenOmaX666
+    desc:	Follow me on twitter
+
+  - icon:	facebook
+    url:	https://www.facebook.com/souhail.hanfi
+    desc:	Follow me on facebook
+
+  - icon:	image
+    url:	https://500px.com/souhailhanfi
+    desc:	Follow me on 500px
 
   - icon:	feed
     url:	http://hanfi.github.io/atom.xml
@@ -52,6 +60,11 @@ menu:
 
   - title:	About
     url:	/about
+
+plugins:
+  - jekyll-paginate
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'bitbucket-pipelines.yml']
 
 copyright:
   author:	SOUHAIL HANFI
