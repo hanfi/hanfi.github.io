@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.3.3
+  - 2.3.3
 
 script:
   - jekyll build
@@ -9,7 +9,7 @@ script:
 
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 sudo: false
 dist: trusty
