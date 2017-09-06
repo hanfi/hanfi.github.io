@@ -2,7 +2,7 @@
 
 	Smooth Scroll 2.16
 	Animate scrolling to anchor links, by Chris Ferdinandi.
-	http://gomakethings.com
+	https://gomakethings.com
 
 	Easing support contributed by Willem Liu.
 	https://github.com/willemliu
@@ -17,7 +17,7 @@
 	https://github.com/a-v-l
 
 	Free to use under the MIT License.
-	http://gomakethings.com/mit/
+	https://gomakethings.com/mit/
 
  * ============================================================= */
 

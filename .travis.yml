@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.3.3
+
+script:
+  - jekyll build
+  - jekyll hyde
+  - htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "https://jekyllrb.com" ./_site
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+sudo: false
+dist: trusty

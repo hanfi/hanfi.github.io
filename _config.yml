@@ -3,7 +3,7 @@ markdown:	kramdown
 highlighter:	rouge
 
 # Permalinks
-permalink:	/blog/:title.html
+permalink:	/blog/:title
 
 # Setup
 title:		'Souhail HANFI'
@@ -51,7 +51,7 @@ social:
     desc:	Follow me on 500px
 
   - icon:	feed
-    url:	http://hanfi.github.io/atom.xml
+    url:	https://hanfi.github.io/atom.xml
     desc:	Subscribe to my feed
 
 menu:
@@ -64,10 +64,10 @@ menu:
 plugins:
   - jekyll-paginate
 
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'bitbucket-pipelines.yml']
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'bitbucket-pipelines.yml', 'script', 'vendor']
 
 copyright:
   author:	SOUHAIL HANFI
-  url:		http://hanfi.github.io/
+  url:		https://hanfi.github.io/
   type_title:	Some rights reserved
-  type_url:	http://creativecommons.org/licenses/by-nc/2.5
+  type_url:	https://creativecommons.org/licenses/by-nc/2.5
