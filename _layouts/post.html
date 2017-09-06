@@ -5,78 +5,78 @@ article: true
 
 <header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image %}{{ page.image }}{% else %}{{ site.cover }}{% endif %});{% if page.background_position %} background-position: {{ page.background_position }};{% else %} background-position: center; {% endif %} background-attachment: fixed; height: 100%;">
 	{% if page.video %}
-		<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-			{% if page.video_webm %}<source src="{{ page.video_webm }}" type="video/webm">{% endif %}
+	<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+		{% if page.video_webm %}<source src="{{ page.video_webm }}" type="video/webm">{% endif %}
 			{% if page.video_ogv %}<source src="{{ page.video_ogv }}" type="video/ogg ogv">{% endif %}
-			{% if page.video_mp4 %}<source src="{{ page.video_mp4 }}" type="video/mp4">{% endif %}
-		</video>
-	{% endif %}
-	{% include top.html %}
-	<div class="post-info">
-		<h1>{{ page.title }}</h1>
-		{% if page.quote %}
-			<h2>{{ page.quote }}</h2>
-		{% endif %}
-		<a class="site-title" href="{{ site.url }}"><img src="{{ site.icon }}" class="site-icon-small" alt="Souhail HANFI">{{ site.title }}</a>, in {{ page.date | date_to_long_string }}
-	</div>
-	<div class="nav-icon" style="bottom: 60px;">
-		<a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-expand"></span></a>
-	</div>
-</header>
-<div id="article">
+				{% if page.video_mp4 %}<source src="{{ page.video_mp4 }}" type="video/mp4">{% endif %}
+				</video>
+				{% endif %}
+				{% include top.html %}
+				<div class="post-info">
+					<h1>{{ page.title }}</h1>
+					{% if page.quote %}
+					<h2>{{ page.quote }}</h2>
+					{% endif %}
+					<a class="site-title" href="{{ site.url }}"><img src="{{ site.icon }}" class="site-icon-small" alt="Souhail HANFI">{{ site.title }}</a>, in {{ page.date | date_to_long_string }}
+				</div>
+				<div class="nav-icon" style="bottom: 60px;">
+					<a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-expand"></span></a>
+				</div>
+			</header>
+			<div id="article">
 
-	<!-- Begin include facebook JS SDK -->
-	{% if site.share or site.comments == "facebook" %}
-	<div id="fb-root"></div>
-	<script src="/assets/js/facebookJsSdk.js"></script>
-	{% endif %}
-	<!-- End include facebook JS SDK -->
-
-
-	<!-- Begin include socialShare buttons-->
-	{% if site.share and page.share != false %}
-		{% include socialShare.html %}
-	{% endif %}
-	<!-- End include socialShare buttons-->
+				<!-- Begin include facebook JS SDK -->
+				{% if site.share or site.comments == "facebook" %}
+				<div id="fb-root"></div>
+				<script src="/assets/js/facebookJsSdk.js"></script>
+				{% endif %}
+				<!-- End include facebook JS SDK -->
 
 
+				<!-- Begin include socialShare buttons-->
+				{% if site.share and page.share != false %}
+				{% include socialShare.html %}
+				{% endif %}
+				<!-- End include socialShare buttons-->
 
-	{{ content }}
 
-	{% if site.comments and page.comments != false %}
-		<!-- Begin github Comments -->
-		{% if site.comments == "github" %}
-			{% include githubComments.html %}
-		<!-- End github Comments -->
 
-		<!-- Begin google plus Comments -->
-		{% elsif site.comments == "google" %}
-			{% include googleComments.html %}
-		<!-- End google plus Comments -->
+				{{ content }}
 
-		<!--Begin facebook comments -->
-		{% elsif site.comments == "facebook" %}
-			{% include facebookComments.html %}
-		{% endif %}
-		<!-- End facebook comments -->
-	{% endif %}
-</div>
+				{% if site.comments and page.comments != false %}
+				<!-- Begin github Comments -->
+				{% if site.comments == "github" %}
+				{% include githubComments.html %}
+				<!-- End github Comments -->
 
-{% for post in site.related_posts limit:1 %}
-<footer class="{% if post.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{ site.cover }}{% endif %}) ; background-position: center ; min-height: 250px;">
-	<div class="nav-icon" style="z-index: 9999;">
-		<a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-collapse"></span></a>
-	</div>
-	<div class="post-info">
-		<h3>Featured post</h3>
-		<a href="{{ post.url }}">
-			<h1>{{ post.title }}</h1>
-			{% if post.quote %}
-				<h2>{{ post.quote }}</h2>
-			{% endif %}
-		</a>
-	</div>
-	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
-</footer>
-{% endfor %}
-<script src="/assets/js/smoothScroll.js"></script>
+				<!-- Begin google plus Comments -->
+				{% elsif site.comments == "google" %}
+				{% include googleComments.html %}
+				<!-- End google plus Comments -->
+
+				<!--Begin facebook comments -->
+				{% elsif site.comments == "facebook" %}
+				{% include facebookComments.html %}
+				{% endif %}
+				<!-- End facebook comments -->
+				{% endif %}
+			</div>
+
+			{% for post in site.related_posts limit:1 %}
+			<footer class="{% if post.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{ site.cover }}{% endif %}) ; background-position: center ; min-height: 250px;">
+				<div class="nav-icon" style="z-index: 9999;">
+					<a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-collapse"></span></a>
+				</div>
+				<div class="post-info">
+					<h3>Featured post</h3>
+					<a href="{{ post.url }}">
+						<h1>{{ post.title }}</h1>
+						{% if post.quote %}
+						<h2>{{ post.quote }}</h2>
+						{% endif %}
+					</a>
+				</div>
+				<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
+			</footer>
+			{% endfor %}
+			<script src="/assets/js/smoothScroll.js"></script>

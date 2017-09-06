@@ -1,9 +1,9 @@
 # Dependencies
 markdown:	kramdown
-highlighter:	rouge
+highlighter: rouge
 
 # Permalinks
-permalink:	/blog/:title
+permalink: /blog/:title
 
 # Setup
 title:		'Souhail HANFI'
