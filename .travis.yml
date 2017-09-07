@@ -1,6 +1,9 @@
 language: ruby
 sudo: false
 dist: trusty
+branches:
+  only:
+    - master
 rvm:
   - 2.3.3
 cache: bundler
