@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/hanfi/hanfi.github.io.svg?branch=master)](https://travis-ci.org/hanfi/hanfi.github.io)
 
 
+[![Known Vulnerabilities](https://snyk.io/test/github/hanfi/hanfi.github.io/badge.svg)](https://snyk.io/test/github/hanfi/hanfi.github.io)
 
 #MY BLOG
 based on [Jekyll](https://jekyllrb.com/)
