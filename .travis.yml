@@ -7,7 +7,6 @@ cache: bundler
 install:
   - npm install -g snyk
   - snyk auth $SNYK_TOKEN
-  - gem install jekyll
 script:
   - bundle install
   - jekyll build
