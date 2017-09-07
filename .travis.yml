@@ -5,16 +5,16 @@ rvm:
   - 2.3.3
 cache: bundler
 install:
-  - gem install jekyll
-  - gem install html-proofer
   - npm install -g snyk
   - snyk auth $SNYK_TOKEN
+  - gem install jekyll
 script:
   - bundle install
   - jekyll build
   - jekyll hyde
   - snyk test
-  - bundle exec htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "/jekyllrb.com/" ./_site
+  - gem install html-proofer
+  - htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "/jekyllrb.com/" ./_site
 after_success:
   - snyk monitor
 env:
