@@ -1,15 +1,24 @@
 language: ruby
+sudo: false
+dist: trusty
+branches:
+  only:
+    - master
 rvm:
   - 2.3.3
-
+cache: bundler
+install:
+  - npm install -g snyk
+  - snyk auth $SNYK_TOKEN
 script:
+  - bundle install
   - jekyll build
   - jekyll hyde
+  - snyk test
+  - gem install html-proofer
   - htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "/jekyllrb.com/" ./_site
-
+after_success:
+  - snyk monitor
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
-sudo: false
-dist: trusty
