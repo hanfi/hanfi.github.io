@@ -9,10 +9,10 @@ cache:
 install:
   - bundle install --path vendor/bundle
   - npm install -g snyk
-  - snyk auth
 script:
   - jekyll build
   - jekyll hyde
+  - snyk auth
   - snyk test
   - htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "/jekyllrb.com/" ./_site
 after_success:
