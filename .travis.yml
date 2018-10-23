@@ -16,7 +16,7 @@ script:
   - jekyll hyde
   - snyk test
   - gem install html-proofer
-  - htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "/jekyllrb.com/,https://gmpg.org/xfn/11" ./_site
+  - htmlproofer --check-html --check-img-http --check-opengraph --enforce-https --check-favicon --assume-extension --http-status-ignore "999" --url-ignore "/jekyllrb.com/,https://gmpg.org/xfn/11,https://daringfireball.net/projects/markdown/syntax" ./_site
 after_success:
   - snyk monitor
 env:
