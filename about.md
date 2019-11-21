@@ -12,4 +12,4 @@ image: /assets/images/about.png
 
 >* The Blog is created with <a href="https://jekyllrb.com/">Jekyll</a>
 
->* The template is a modified Thinny 2 theme from <a href="https://camporez.github.io/blog/thinny-2/">camporez</a>
+>* The template is a modified Thinny 2 theme from <a href="https://github.com/camporez">camporez</a>

@@ -94,8 +94,6 @@ Here are the URLs to get the code to include:
 
 * <a href="https://developers.facebook.com/docs/plugins/like-button" target="_blank">https://developers.facebook.com/docs/plugins/like-button</a> for facebook like/share button
 
-* <a href="https://developers.google.com/+/web/share/" target="_blank">https://developers.google.com/+/web/share/</a> for the google plus button
-
 {% highlight html %}
 {{ "{% if site.share or page.share != false"}} %}
 <div class="social_share">
